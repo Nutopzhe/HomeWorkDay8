@@ -1,9 +1,9 @@
 public class Baggage {
     private String carrier;
     private String flight;
-    private double weight;
+    private int weight;
 
-    public Baggage(String carrier, String flight, double weight) {
+    public Baggage(String carrier, String flight, int weight) {
         this.carrier = carrier;
         this.flight = flight;
         this.weight = weight;
@@ -25,11 +25,17 @@ public class Baggage {
         this.flight = flight;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Перевозчик: [%s] - Класс: [%s] - Багаж: [%dкг]\n",
+                carrier, flight, weight);
     }
 }
